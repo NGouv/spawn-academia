@@ -1,0 +1,162 @@
+/* Tablets */
+@media (max-width: 992px){
+
+    .cards,
+    .niveis{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .pagina-categoria,
+    .treino{
+
+        padding-top:140px;
+
+    }
+
+}
+
+/* Celulares */
+@media (max-width:768px){
+
+    nav{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:15px;
+        padding:15px 20px;
+    }
+
+    .logo{
+        width:75px;
+    }
+
+    .menu{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:20px;
+        flex-wrap:wrap;
+    }
+
+    .hero{
+
+        min-height:100vh;
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        padding-top:130px;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+    .btn{
+
+        width:90%;
+        max-width:280px;
+
+    }
+
+    .cards,
+    .niveis{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .nivel-card img{
+
+        height:280px;
+
+    }
+
+    .pagina-categoria,
+    .treino{
+
+        padding-top:140px;
+
+    }
+
+}
+
+/* Celulares pequenos (iPhone SE e similares) */
+@media (max-width:480px){
+
+    nav{
+
+        gap:10px;
+
+    }
+
+    .logo{
+
+        width:65px;
+
+    }
+
+    .menu{
+
+        gap:12px;
+        font-size:15px;
+
+    }
+
+    .hero{
+
+        min-height:100vh;
+
+    }
+
+    .hero-content{
+
+        padding-top:130px;
+
+    }
+
+    .hero h1{
+
+        font-size:28px;
+
+    }
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+    .btn{
+
+        width:95%;
+        font-size:16px;
+
+    }
+
+    .nivel-card img{
+
+        height:230px;
+
+    }
+
+    .pagina-categoria,
+    .treino{
+
+        padding-top:150px;
+
+    }
+
+}
