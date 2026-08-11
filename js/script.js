@@ -10,71 +10,75 @@
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 
-let currentSlide = 0;
-let autoSlide;
+if (slides.length && dots.length) {
 
-// Mostrar slide
-function showSlide(index) {
+    let currentSlide = 0;
+    let autoSlide;
 
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
+    // Mostrar slide
+    function showSlide(index) {
 
-    dots.forEach(dot => {
-        dot.classList.remove("active");
-    });
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+        });
 
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");
+        dots.forEach(dot => {
+            dot.classList.remove("active");
+        });
 
-}
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
 
-// Próximo slide
-function nextSlide() {
-
-    currentSlide++;
-
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
     }
 
-    showSlide(currentSlide);
+    // Próximo slide
+    function nextSlide() {
 
-}
+        currentSlide++;
 
-// Iniciar carrossel
-function startSlider() {
-
-    autoSlide = setInterval(nextSlide, 5000);
-
-}
-
-// Reiniciar quando clicar
-function resetSlider() {
-
-    clearInterval(autoSlide);
-    startSlider();
-
-}
-
-// Clique nos indicadores
-dots.forEach((dot, index) => {
-
-    dot.addEventListener("click", () => {
-
-        currentSlide = index;
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
 
         showSlide(currentSlide);
 
-        resetSlider();
+    }
+
+    // Iniciar carrossel
+    function startSlider() {
+
+        autoSlide = setInterval(nextSlide, 5000);
+
+    }
+
+    // Reiniciar quando clicar
+    function resetSlider() {
+
+        clearInterval(autoSlide);
+        startSlider();
+
+    }
+
+    // Clique nos indicadores
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener("click", () => {
+
+            currentSlide = index;
+
+            showSlide(currentSlide);
+
+            resetSlider();
+
+        });
 
     });
 
-});
+    // Iniciar
+    showSlide(currentSlide);
+    startSlider();
 
-// Iniciar
-showSlide(currentSlide);
-startSlider();
+}
 
 
 // ================================
@@ -123,3 +127,41 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+// ================================
+// ANIMAÇÃO AO ROLAR
+// ================================
+
+const elementosAnimar = document.querySelectorAll(
+    ".categorias h2, .card, .contato, .contato-card, .treino .titulo, .treino .card-treino"
+);
+
+if (elementosAnimar.length) {
+
+    const observer = new IntersectionObserver((entradas) => {
+
+        entradas.forEach(entrada => {
+
+            if (entrada.isIntersecting) {
+
+                entrada.target.classList.add("visivel");
+
+                observer.unobserve(entrada.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
+    });
+
+    elementosAnimar.forEach(elemento => {
+
+        elemento.classList.add("animar-scroll");
+
+        observer.observe(elemento);
+
+    });
+
+}
