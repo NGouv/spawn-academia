@@ -276,3 +276,13 @@ footer{
     }
 
 }
+
+@media(max-width:480px){
+
+    .exercicio-item > span{
+
+        flex-basis:0;
+
+    }
+
+}
