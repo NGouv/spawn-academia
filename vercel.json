@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/masculino",
+      "destination": "/pages/masculino.html"
+    },
+    {
+      "source": "/masculino-iniciante",
+      "destination": "/pages/masculino-iniciante.html"
+    },
+    {
+      "source": "/masculino-intermediario",
+      "destination": "/pages/masculino-intermediario.html"
+    },
+    {
+      "source": "/feminino",
+      "destination": "/pages/feminino.html"
+    },
+    {
+      "source": "/feminino-iniciante",
+      "destination": "/pages/feminino-iniciante.html"
+    },
+    {
+      "source": "/feminino-intermediario",
+      "destination": "/pages/feminino-intermediario.html"
+    }
+  ]
+}
