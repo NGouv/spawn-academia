@@ -15,8 +15,17 @@ if (slides.length && dots.length) {
     let currentSlide = 0;
     let autoSlide;
 
+    function loadSlide(index) {
+        const slide = slides[index];
+
+        if (slide.dataset.src) {
+            slide.src = slide.dataset.src;
+            delete slide.dataset.src;
+        }
+    }
+
     // Mostrar slide
-    function showSlide(index) {
+    function showSlide(index, preloadNext = true) {
 
         slides.forEach(slide => {
             slide.classList.remove("active");
@@ -26,8 +35,13 @@ if (slides.length && dots.length) {
             dot.classList.remove("active");
         });
 
+        loadSlide(index);
         slides[index].classList.add("active");
         dots[index].classList.add("active");
+
+        if (preloadNext) {
+            loadSlide((index + 1) % slides.length);
+        }
 
     }
 
@@ -75,7 +89,8 @@ if (slides.length && dots.length) {
     });
 
     // Iniciar
-    showSlide(currentSlide);
+    showSlide(currentSlide, false);
+    window.setTimeout(() => loadSlide((currentSlide + 1) % slides.length), 1000);
     startSlider();
 
 }
