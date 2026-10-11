@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://spawn-academia.vercel.app/</loc>
+  </url>
+  <url>
+    <loc>https://spawn-academia.vercel.app/masculino</loc>
+  </url>
+  <url>
+    <loc>https://spawn-academia.vercel.app/masculino-iniciante</loc>
+  </url>
+  <url>
+    <loc>https://spawn-academia.vercel.app/masculino-intermediario</loc>
+  </url>
+  <url>
+    <loc>https://spawn-academia.vercel.app/feminino</loc>
+  </url>
+  <url>
+    <loc>https://spawn-academia.vercel.app/feminino-iniciante</loc>
+  </url>
+  <url>
+    <loc>https://spawn-academia.vercel.app/feminino-intermediario</loc>
+  </url>
+</urlset>
